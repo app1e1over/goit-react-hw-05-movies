@@ -1,0 +1,11 @@
+.statistics{
+    border: 1px solid navy;
+    & div:has( .node){
+        display: flex;
+    }
+    & .node{
+        border: 1px solid black;
+        margin-left: 10px;
+        width: 80px;
+    }
+}

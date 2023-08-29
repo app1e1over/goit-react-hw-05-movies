@@ -2,9 +2,9 @@ import Profile from './Profile/Profile';
 import React, { useState } from 'react';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
-import friends from '../friends.json';
+import friends from '../data/friends.json';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
-import transactions from '../transactions.json';
+import transactions from '../data/transactions.json';
 
 export const App = () => {
   const [task, setTask] = useState(0);

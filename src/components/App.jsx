@@ -48,7 +48,7 @@ export const App = () => {
           <button onClick={() => setTask(3)}>Next</button>
         </>
       );
-    case 3:
+    default:
       return (
         <>
           <TransactionHistory items={transactions}></TransactionHistory>

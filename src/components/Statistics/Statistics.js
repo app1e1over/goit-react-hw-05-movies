@@ -1,5 +1,4 @@
 import React from 'react';
-import Stat from 'components/Stat/Stat';
 import './style.css';
 import PropTypes from 'prop-types';
 

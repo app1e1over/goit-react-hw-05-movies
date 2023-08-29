@@ -10,7 +10,7 @@ function TransactionHistory({ items }) {
   let fields = {};
   items.forEach(e => {
     for (let key in e) {
-      if (fields[key] == undefined && key.toLowerCase() != 'id')
+      if (fields[key] === undefined && key.toLowerCase() !== 'id')
         fields[key] = '';
     }
   });

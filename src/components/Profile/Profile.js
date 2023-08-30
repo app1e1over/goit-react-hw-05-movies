@@ -3,9 +3,8 @@ import "./style.css";
 import PropTypes from 'prop-types'
 import Stats from "components/Stats/Stats";
 
-function Profile(props){
-    const {avatar, username, tag, location, stats } = props;
-    console.log("hi");
+function Profile({user}){
+    const {avatar, username, tag, location, stats } = user;
     return (
         
         <div className="profile">
@@ -21,10 +20,11 @@ function Profile(props){
 }
 
 Profile.propTypes = {
-    avatar: PropTypes.string,
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    stats: PropTypes.object    
+    user: PropTypes.object
+    // avatar: PropTypes.string,
+    // username: PropTypes.string,
+    // tag: PropTypes.string,
+    // location: PropTypes.string,
+    // stats: PropTypes.object    
   }
 export default Profile;

@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
 import friends from '../data/friends.json';
+import user from '../data/user.json';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import transactions from '../data/transactions.json';
+import data from "../data/data.json";
 
 export const App = () => {
   const [task, setTask] = useState(0);
@@ -17,24 +19,19 @@ export const App = () => {
       return (
         <>
           <Profile
-            avatar={avatar}
-            username="OlegTheBest"
-            tag="olg123"
-            location="Uzhhorod, Ukraine"
-            stats={{ Followers: 29, Views: 3023, Likes: 492 }}
+          user={user}
+        
           ></Profile>
-          <button onClick={() => setTask(1)}>Next</button>
           <button onClick={() => setTask(3)}>Last</button>
+
+          <button onClick={() => setTask(1)}>Next</button>
         </>
       );
     case 1:
       return (
         <>
           <Statistics
-            title="upload stats"
-            stats={{ docx: 32, pdf: 4, mp3: 17, psd: 47 }}
-            padStatTitleStart="."
-            padStatValueEnd="%"
+            data = {data}
           ></Statistics>
           <button onClick={() => setTask(0)}>Prev</button>
           <button onClick={() => setTask(2)}>Next</button>

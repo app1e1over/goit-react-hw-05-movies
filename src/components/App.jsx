@@ -10,10 +10,6 @@ import data from "../data/data.json";
 
 export const App = () => {
   const [task, setTask] = useState(0);
-
-  const avatar =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2RaDHshWwSJpShiCvrf7-lEzf0UMlu-hu8uuZu3TF&s';
-
   switch (task) {
     case 0:
       return (

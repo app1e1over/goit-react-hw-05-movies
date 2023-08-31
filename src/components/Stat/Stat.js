@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 
 function Stat(props){
     const {name, value} = props;
-    console.log(name);
     return (
         <div className="stat">
             <p className="stat-name">{name}</p>

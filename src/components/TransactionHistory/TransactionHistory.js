@@ -19,7 +19,6 @@ function TransactionHistory({ items }) {
   });
 
   const body = items.map(i => {
-    console.log(i);
     return (<Transaction key={i.id} trans={i}></Transaction>)});
 
   return (

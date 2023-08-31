@@ -7,7 +7,6 @@ function genHex() {
 }
 
 function Statistics({data, title}) {
-  console.log(data);
   let stringRep = data.map(el =>( 
     <div className="node" key={el.id} style={{backgroundColor: genHex()}}>
       <h2>{el.label}</h2>

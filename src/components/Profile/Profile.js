@@ -21,10 +21,5 @@ function Profile({user}){
 
 Profile.propTypes = {
     user: PropTypes.object
-    // avatar: PropTypes.string,
-    // username: PropTypes.string,
-    // tag: PropTypes.string,
-    // location: PropTypes.string,
-    // stats: PropTypes.object    
   }
 export default Profile;

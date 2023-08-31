@@ -7,7 +7,7 @@ function CompactUser(props) {
     const className = "wrap-compact-user "+(isOnline?"active":"inactive");
     return (<div className={className} >
        <div className='avatar'>
-       <img alt='pfp' src={avatar} ></img>
+       <img alt={`${name}'s pfp`} src={avatar} ></img>
        </div>
        <h2>
         {name}

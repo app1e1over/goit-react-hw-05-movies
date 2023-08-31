@@ -2,7 +2,7 @@
   "name": "react-homework-1-done",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/app1e1over/goit-react-hw-01-components",
+  "homepage": "https://app1e1over.github.io/goit-react-hw-01-components/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

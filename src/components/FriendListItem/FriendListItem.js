@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types'; 
 
-function CompactUser(props) {
+function FriendListItem(props) {
     const {user:{name, avatar, isOnline}}=props;
     const className = "wrap-compact-user "+(isOnline?"active":"inactive");
     return (<div className={className} >
@@ -14,7 +14,7 @@ function CompactUser(props) {
        </h2>
     </div>)
 }
-CompactUser.propTypes={
+FriendListItem.propTypes={
     user:PropTypes.object
 }
-export default CompactUser;
+export default FriendListItem;

@@ -1,17 +1,17 @@
 import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
-import CompactUser from 'components/CompactUser/CompactUser';
+import FriendListItem from 'components/FriendListItem/FriendListItem';
 
 function FriendList(props) {
   const { friends } = props;
   let stringRep = friends.map((friend, i) => (
-    <CompactUser 
+    <FriendListItem 
     className="node"
     key={friend.id}
     user={friend}>
 
-    </CompactUser>
+    </FriendListItem>
       
       
   ));

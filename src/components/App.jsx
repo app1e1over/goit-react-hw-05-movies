@@ -28,6 +28,10 @@ export const App = () => {
         <>
           <Statistics
             data = {data}
+            title='UPLOAD STATS'
+          ></Statistics>
+           <Statistics
+            data = {data}
           ></Statistics>
           <button onClick={() => setTask(0)}>Prev</button>
           <button onClick={() => setTask(2)}>Next</button>

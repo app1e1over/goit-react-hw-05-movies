@@ -14,7 +14,7 @@ function Movies(props) {
         e.target[1].disabled = true;
         if(val.trim()==="")
             return;
-        findByQuery(val).then(d=>setResults(d.map(m=>{console.log(m);return (<p key={m.id}><NavLink  to={`/movies/${m.id}`}>{m.original_title}</NavLink></p>)})))
+        findByQuery(val).then(d=>setResults(d.map(m=>{console.log(m);return (<p key={m.id}><NavLink  to={`/goit-react-hw-05-movies/movies/${m.id}`}>{m.original_title}</NavLink></p>)})))
     }
 
   return (

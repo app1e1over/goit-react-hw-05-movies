@@ -15,7 +15,7 @@ function Home(props) {
           console.log(m);
           return (
             <p key={m.id}>
-              <NavLink to={`/movies/${m.id}`}>{m.original_title}</NavLink>
+              <NavLink to={`/goit-react-hw-05-movies/movies/${m.id}`}>{m.original_title}</NavLink>
             </p>
           );
         })

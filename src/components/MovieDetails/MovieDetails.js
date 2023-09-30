@@ -39,13 +39,13 @@ const MovieDetails = props => {
       <div>
         <NavLink
           style={{ marginRight: 10 }}
-          to={'/movies/' + movieId + '/cast'}
+          to={'/goit-react-hw-05-movies/movies/' + movieId + '/cast'}
           end
         >
           Cast
         </NavLink>
 
-        <NavLink to={'/movies/' + movieId + '/reviews'} end>
+        <NavLink to={'/goit-react-hw-05-movies/movies/' + movieId + '/reviews'} end>
           Reviews
         </NavLink>
       </div>

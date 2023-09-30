@@ -7,8 +7,9 @@ import Movies from "./Movies/Movies";
 export const App = () => {
   return (
     <div>
+    1
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/goit-react-hw-05-movies/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId/*" element={<MovieDetails />} />
         {/* <Route path="/movies/:movieId/cast" element={<MovieDetails  additional={"cast"}/>} />

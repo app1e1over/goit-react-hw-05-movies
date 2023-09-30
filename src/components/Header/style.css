@@ -1,0 +1,22 @@
+
+.link{
+    padding: 3px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    margin: 1px;
+    margin-right: 10px;
+    transition: all 0.5s ease;
+}
+.link:hover{
+    margin: 0px;
+    margin-right: 9px;
+    padding: 4px;
+    background-color: rgba(234, 120, 87, 0.7);
+    text-decoration: underline;
+}
+.active{
+    color: red;
+    border: 1px solid red;
+
+}

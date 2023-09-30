@@ -12,9 +12,8 @@ const MovieDetails = props => {
   const { movieId } = useParams();
 
   const [movie, setMovie] = useState();
-  const [addinf, setAddinf] = useState([]);
 
-  if (movie == undefined) {
+  if (movie === undefined) {
     getById(movieId).then(d => setMovie(d));
     return <div>Loading</div>;
   }

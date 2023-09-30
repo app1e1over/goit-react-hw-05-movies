@@ -26,7 +26,7 @@ function Movies(props) {
 
         <input type="text" placeholder="Write your querry" />
         <button type='submit'>
-          <a href="#">Find</a>
+          find
         </button>
       </form>
       </div>

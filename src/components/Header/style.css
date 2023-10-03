@@ -5,6 +5,9 @@
     --gray:#333;
     --text:#ccc;
 }
+body{
+    background-color: var(--gray);
+}
 .link{
     padding: 3px;
     border: 1px solid black;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function GoBack() {
   let link = sessionStorage.getItem('link')

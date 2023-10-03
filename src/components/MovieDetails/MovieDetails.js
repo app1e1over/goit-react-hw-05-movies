@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from 'components/Header/Header';
 import { Routes, useParams, Route } from 'react-router-dom';
 import { getById, getImage } from 'javascript/MovieFetcher';
 import { NavLink } from 'react-router-dom';

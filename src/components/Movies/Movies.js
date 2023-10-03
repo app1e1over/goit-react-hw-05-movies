@@ -1,9 +1,7 @@
 import React from 'react';
-import Header from 'components/Header/Header';
 import "./style.css"
 import { findByQuery } from 'javascript/MovieFetcher';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import MoviesList from 'components/MoviesList/MoviesList';
 
 

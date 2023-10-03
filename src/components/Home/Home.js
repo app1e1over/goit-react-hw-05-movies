@@ -1,30 +1,18 @@
 import React from 'react';
 import { getPopular } from 'javascript/MovieFetcher';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import Header from 'components/Header/Header';
 import { Suspense } from 'react';
+import { lazy } from 'react';
+import Loader from 'components/Loader/Loader'
 
-
+const MoviesList = lazy(() => import('components/MoviesList/MoviesList'));
 function Home(props) {
-  const [popular, setPopular] = useState([]);
-  if (popular.length === 0)
-    getPopular().then(d =>
-      setPopular(
-        d.map(m => {
-          console.log(m);
-          return (
-            <p key={m.id}>
-              <NavLink to={`/goit-react-hw-05-movies/movies/${m.id}`}>{m.original_title}</NavLink>
-            </p>
-          );
-        })
-      )
-    );
+  const [popular, setPopular] = useState();
+  if (popular===undefined) getPopular().then(setPopular);
   return (
     <div>
-      <Header active={0}></Header>
-      <Suspense fallback={'Loading...'}>{popular}</Suspense>
+      <Suspense fallback={<Loader></Loader>}><MoviesList movies = {popular}></MoviesList></Suspense>
     </div>
   );
 }

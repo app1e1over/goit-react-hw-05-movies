@@ -1,10 +1,11 @@
 import React from 'react';
+import './style.css'
 
 function Review({review}) {
     return (
-        <div>
-            <h2>{review.author}</h2>
-            <p>{review.content}</p>
+        <div className='review-container'>
+            <h2 className='reviewer-name'>{review.author}</h2>
+            <p className='review'>{review.content}</p>
         </div>
     );
 }

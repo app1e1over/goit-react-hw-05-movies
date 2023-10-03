@@ -33,7 +33,8 @@ function Actors({ movieId }) {
   useEffect(() => {
     previousValues.current = values;
   }, [values]);
-  return <div>{values}</div>;
+  
+  return <div className='actors-container'>{values}</div>;
 }
 
 export default Actors;

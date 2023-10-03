@@ -1,0 +1,17 @@
+.links{
+    & a{
+        color: var(--active-bleak);
+    }
+}
+.container{
+    color:  var(--text);
+    display: flex;
+    gap:20px;
+    & h1, & .score{
+        color: var(--active);
+    }
+    & h2{
+        color: var(--active-bleak);
+    }
+
+}

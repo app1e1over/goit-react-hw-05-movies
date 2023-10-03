@@ -4,6 +4,7 @@ import "./style.css"
 import { findByQuery } from 'javascript/MovieFetcher';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 
 function Movies(props) {
@@ -14,12 +15,11 @@ function Movies(props) {
         e.target[1].disabled = true;
         if(val.trim()==="")
             return;
-        findByQuery(val).then(d=>setResults(d.map(m=>{console.log(m);return (<p key={m.id}><NavLink  to={`/goit-react-hw-05-movies/movies/${m.id}`}>{m.original_title}</NavLink></p>)})))
+        findByQuery(val).then(setResults)
     }
 
   return (
     <div>
-      <Header active={1}></Header>
       <div className='search-container'>
       <form className="search-local" onSubmit={search}>
 
@@ -31,7 +31,7 @@ function Movies(props) {
       </form>
       </div>
       
-      {result}
+      <MoviesList movies={result}></MoviesList>
     </div>
   );
 }

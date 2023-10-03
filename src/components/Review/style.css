@@ -1,0 +1,19 @@
+.reviewer-name{
+    color: var(--active);
+    margin-bottom: 4px;
+}
+.review{
+    color: inherit;
+    margin-top: 0px;
+}
+.review-container{
+    color: var(--text);
+    padding: 5px;
+    margin: 5px;;
+    transition: all ease 1s;
+}
+.review-container:hover{
+    font-size: large;
+    background-color: var(--text);
+    color: var(--gray);
+}

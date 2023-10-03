@@ -1,19 +1,17 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./Home/Home";
-import MovieDetails from "./MovieDetails/MovieDetails";
-import Movies from "./Movies/Movies";
+import { Route, Routes} from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+import Loader from './Loader/Loader';
 
-
+const MoviesPage = lazy(()=>import('pages/MoviesPage'))
+const HomePage = lazy(()=>import('pages/HomePage'))
+const MovieDetailsPage = lazy(()=>import('pages/MovieDetailsPage'))
 export const App = () => {
   return (
     <div>
-    
-      <Routes>
-        <Route path="/goit-react-hw-05-movies/" element={<Home />} />
-        <Route path="/goit-react-hw-05-movies/movies" element={<Movies />} />
-        <Route path="/goit-react-hw-05-movies/movies/:movieId/*" element={<MovieDetails />} />
-        {/* <Route path="/movies/:movieId/cast" element={<MovieDetails  additional={"cast"}/>} />
-        <Route path="/movies/:movieId/reviews" element={<MovieDetails additional={"reviews"}/>} /> */}
+      <Routes>        
+        <Route path="/movies" element={<Suspense fallback={<Loader></Loader>}><MoviesPage /></Suspense>} />
+        <Route path="/movies/:movieId/*" element={<Suspense fallback={<Loader></Loader>}><MovieDetailsPage /></Suspense>} />
+        <Route path="/*" element={<Suspense fallback={<Loader></Loader>}><HomePage /></Suspense>} />
       </Routes>
     </div>
   );

@@ -1,0 +1,1 @@
+body{background-color:var(--gray)}ul{list-style:none;padding:0;margin:0}ul.film{text-align:center;padding:10px 0}ul.film li a{display:block;width:100vw;padding-top:5px;padding-bottom:5px;text-decoration:none;color:#fff;font-size:18px;font-weight:bold;transition:.3s ease}ul.film li a:hover{color:var(--active)}

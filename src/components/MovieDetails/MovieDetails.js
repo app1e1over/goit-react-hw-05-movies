@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { Routes, useParams, Route } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getById, getImage } from 'javascript/MovieFetcher';
 import { NavLink } from 'react-router-dom';
-import { Suspense } from 'react';
-import './style.css'
-import { lazy } from 'react';
 
-const Actors = lazy(() => import('components/Actors/Actors'));
-const Reviews = lazy(() => import('components/Reviews/Reviews'));
+import './style.css'
+
 const MovieDetails = () => {
   const { movieId } = useParams();
 
@@ -48,16 +45,7 @@ const MovieDetails = () => {
           Reviews
         </NavLink>
       </div>
-      <Routes>
-        <Route
-          path="/reviews"
-          element={<Suspense fallback={"Loading..."}><Reviews movieId={movieId}></Reviews></Suspense>}
-        ></Route>
-        <Route
-          path="/cast"
-          element={<Suspense fallback={"Loading..."}><Actors movieId={movieId}></Actors></Suspense>}
-        ></Route>
-      </Routes>
+
     </div>
   );
 };

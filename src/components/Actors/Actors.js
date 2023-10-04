@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { getAdditional } from 'javascript/MovieFetcher';
 import { lazy } from 'react';
-
+import { useParams } from 'react-router-dom';
 const Actor = lazy(() => import('components/Actor/Actor'))
-function Actors({ movieId }) {
+function Actors() {
   const [values, setValues] = useState([]);
   const previousValues = useRef(null);
-
+  const { movieId } = useParams();
   if (previousValues.current===null) {
     getAdditional(movieId, 'cast').then(v => {
       drawActors(v.cast);

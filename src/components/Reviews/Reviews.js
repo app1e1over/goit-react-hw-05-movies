@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState, useRef,useEffect } from 'react';
 import { getAdditional } from 'javascript/MovieFetcher';
-import { Suspense } from 'react';
-import { lazy } from 'react';
 
+import { lazy } from 'react';
+import { useParams } from 'react-router-dom';
 const Review = lazy(() => import('components/Review/Review'))
-function Reviews({movieId}) {
+function Reviews() {
     const [values, setValues]=useState([]);
+    const { movieId } = useParams();
     const previousValues = useRef(null);
 
     if(previousValues.current===null){
@@ -25,7 +26,7 @@ function Reviews({movieId}) {
   }
 
 
-  return <Suspense fallback={"Loading"}>{values.length>0 ? values : "no reviews were left"}</Suspense>;
+  return <ul>{values.length>0 ? values : "no reviews were left"}</ul>;
 }
 
 export default Reviews;

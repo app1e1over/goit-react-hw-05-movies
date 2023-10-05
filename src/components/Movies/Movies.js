@@ -8,7 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 
 function Movies() {
     const [result, setResults]=useState([]);
-    const [query, setQuery]=useSearchParams();
+    const [query]=useSearchParams();
     
 
     useEffect(()=>{

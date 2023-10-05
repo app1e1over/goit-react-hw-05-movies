@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import Loader from './Loader/Loader';
+import { lazy } from 'react';
 import Container from './Container/Container';
 
 // import MoviesPage from 'pages/MoviesPage';

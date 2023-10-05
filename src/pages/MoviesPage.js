@@ -5,7 +5,6 @@ import React from 'react';
 function MoviesPage(props) {
     return (
         <div>
-            <Header active={1}></Header>
             <Movies></Movies>
         </div>
     );

@@ -9,6 +9,9 @@ export function getById(id){
 }
 
 export function getImage(id, width) {
+    if(id===null){
+        return "../components/Actor/Riddler.png"
+    }
     return "https://image.tmdb.org/t/p/w"+width+id;
 }
 

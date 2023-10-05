@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import "./style.css"
 
 
@@ -8,10 +8,10 @@ class Header extends Component {
   render() {
     return (
       <nav className='header-nav'>
-        <NavLink to="/" className={(this.props.active===0?"active":"inactive") + " link"}>
+        <NavLink to="/" className={"link"}>
           Home
         </NavLink>
-        <NavLink to="/movies" className={(this.props.active===1?"active":"inactive")+ " link"}>Movies</NavLink>
+        <NavLink to="/movies" className={"link"}>Movies</NavLink>
       </nav>
     );
   }

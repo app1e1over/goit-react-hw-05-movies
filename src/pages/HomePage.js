@@ -5,7 +5,6 @@ import React from 'react';
 function HomePage(props) {
     return (
         <div>
-            <Header active={0}></Header>
             <Home></Home>
         </div>
     );

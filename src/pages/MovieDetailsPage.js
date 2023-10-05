@@ -6,7 +6,6 @@ import GoBack from 'components/GoBack/GoBack';
 function MovieDetailsPage(props) {
     return (
         <div>
-            <Header active={1}></Header>
             <GoBack></GoBack>
             <MovieDetails></MovieDetails>
         </div>

@@ -9,26 +9,22 @@ function Actors() {
   const { movieId } = useParams();
   if (previousValues.current===null) {
     getAdditional(movieId, 'cast').then(v => {
-      drawActors(v.cast);
+      setValues(
+        v.cast.map(a => (
+          <Actor
+            key={a.id}
+            name={a.name}
+            profile_path={a.profile_path}
+            character={a.character}
+          ></Actor>
+        ))
+      );
     });
   }
 
   useEffect(() => {
     previousValues.current = values;
   }, [values]);
-  function drawActors(actors) {
-    console.log(actors);
-    setValues(
-      actors.map(a => (
-        <Actor
-          key={a.id}
-          name={a.name}
-          profile_path={a.profile_path}
-          character={a.character}
-        ></Actor>
-      ))
-    );
-  }
 
   useEffect(() => {
     previousValues.current = values;

@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 function GoBack() {
   let link = sessionStorage.getItem('link')
-  link=link.substring(link.indexOf('/', 2), link.length);
+  link="/"+link.replace("goit-react-hw-05-movies", "").replaceAll("/", "");
+
   return (
     <div>
       <NavLink to={link}>

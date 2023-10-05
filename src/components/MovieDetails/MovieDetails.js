@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { Suspense, useState } from 'react';
+import { Outlet, useParams } from 'react-router-dom';
 import { getById, getImage } from 'javascript/MovieFetcher';
 import { NavLink } from 'react-router-dom';
 
-import './style.css'
+import './style.css';
+import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -17,14 +18,19 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <div className='container'>
+      <div className="container">
         <img src={getImage(movie.poster_path, 400)} alt="poster"></img>
         <div>
           {' '}
           <h1>
             {movie.title}({movie.release_date.split('-')[0]})
           </h1>
-          <p>User score: <span className='score'>{(movie.vote_average * 10).toFixed(2)}%</span></p>
+          <p>
+            User score:{' '}
+            <span className="score">
+              {(movie.vote_average * 10).toFixed(2)}%
+            </span>
+          </p>
           <h2>Overview</h2>
           <p>{movie.overview}</p>
           <h2>Genres</h2>
@@ -32,7 +38,7 @@ const MovieDetails = () => {
         </div>
       </div>
 
-      <div className='links'>
+      <div className="links">
         <NavLink
           style={{ marginRight: 10 }}
           to={'/movies/' + movieId + '/cast'}
@@ -45,7 +51,9 @@ const MovieDetails = () => {
           Reviews
         </NavLink>
       </div>
-
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./style.css"
 import { findByQuery } from 'javascript/MovieFetcher';
 import { useState } from 'react';
 import MoviesList from 'components/MoviesList/MoviesList';
+import { useSearchParams } from 'react-router-dom';
 
 
-function Movies(props) {
+function Movies() {
     const [result, setResults]=useState([]);
-    function search(e){
-        e.preventDefault();
-        let val = e.target[0].value;
-        e.target[1].disabled = true;
-        if(val.trim()==="")
-            return;
-        findByQuery(val).then(setResults)
-    }
+    const [query, setQuery]=useSearchParams();
+    
+
+    useEffect(()=>{
+      if(query.size===0)
+          return;
+      let queryText = query.get("query");
+      findByQuery(queryText).then(setResults);
+    }, [query])
 
   return (
     <div>
       <div className='search-container'>
-      <form className="search-local" onSubmit={search}>
+      <form className="search-local" >
 
 
-        <input type="text" placeholder="Write your querry" />
+        <input type="text" name='query' placeholder="Write your querry" defaultValue={query.get("query")}/>
         <button type='submit'>
           find
         </button>

@@ -3,9 +3,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './style.css'
 
-function MoviesList(props) {
+function MoviesList({movies}) {
   sessionStorage.setItem("link", window.location.pathname);
-  const {movies}=props;
   if(movies===undefined){
     return <Loader></Loader>
   }

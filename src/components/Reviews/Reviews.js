@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getAdditional } from 'javascript/MovieFetcher';
 
 import { lazy } from 'react';
@@ -8,17 +8,12 @@ const Review = lazy(() => import('components/Review/Review'));
 function Reviews() {
   const [values, setValues] = useState([]);
   const { movieId } = useParams();
-  const previousValues = useRef(null);
 
-  if (previousValues.current === null) {
+  useEffect(() => {
     getAdditional(movieId, 'reviews').then(v => {
       setValues(v.results.map(a => <Review key={a.id} review={a}></Review>));
     });
-  }
-
-  useEffect(() => {
-    previousValues.current = values;
-  }, [values]);
+  }, [movieId]);
 
   return <ul>{values.length > 0 ? values : 'no reviews were left'}</ul>;
 }

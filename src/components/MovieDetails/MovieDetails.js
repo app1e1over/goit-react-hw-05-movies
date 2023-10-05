@@ -19,7 +19,7 @@ const MovieDetails = () => {
   return (
     <div>
       <div className="container">
-        <img src={getImage(movie.poster_path, 400)} alt="poster"></img>
+        <img src={getImage(movie.poster_path, 400)} alt="poster" onError={(e)=>{let img=e.target; img.src="https://images.template.net/wp-content/uploads/2017/02/17221912/Printable-Blank-Movie-Poster.jpg"; }}></img>
         <div>
           {' '}
           <h1>

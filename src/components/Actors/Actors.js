@@ -1,13 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getAdditional } from 'javascript/MovieFetcher';
 import { lazy } from 'react';
 import { useParams } from 'react-router-dom';
+import './style.css'
+
 const Actor = lazy(() => import('components/Actor/Actor'))
 function Actors() {
   const [values, setValues] = useState([]);
-  const previousValues = useRef(null);
   const { movieId } = useParams();
-  if (previousValues.current===null) {
+
+  useEffect(() => {
     getAdditional(movieId, 'cast').then(v => {
       setValues(
         v.cast.map(a => (
@@ -20,15 +22,7 @@ function Actors() {
         ))
       );
     });
-  }
-
-  useEffect(() => {
-    previousValues.current = values;
-  }, [values]);
-
-  useEffect(() => {
-    previousValues.current = values;
-  }, [values]);
+  }, [movieId]);
   
   return <div className='actors-container'>{values}</div>;
 }

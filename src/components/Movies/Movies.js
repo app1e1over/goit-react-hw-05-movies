@@ -8,7 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 
 function Movies() {
     const [result, setResults]=useState([]);
-    const [query]=useSearchParams();
+    const [query, setQuery]=useSearchParams();
     
 
     useEffect(()=>{
@@ -21,7 +21,7 @@ function Movies() {
   return (
     <div>
       <div className='search-container'>
-      <form className="search-local" >
+      <form className="search-local" onSubmit={(e)=>{e.preventDefault(); setQuery("query="+e.target[0].value)}}>
 
 
         <input type="text" name='query' placeholder="Write your querry" defaultValue={query.get("query")}/>
